@@ -11,6 +11,10 @@ function LandingPage (){
       <div className='container__left'>
 
       </div>
+
+      <div className='container__right'>
+
+      </div>
     </>
 
   )
