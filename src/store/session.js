@@ -28,7 +28,14 @@ export const authenticate = () => async (dispatch) => {
   }
 }
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (payload) => async (dispatch) => {
+  
+  const {
+    email,
+    password
+  } = payload
+
+  
   const res = await fetch('', {
     method:'POST',
     headers:{

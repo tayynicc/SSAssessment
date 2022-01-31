@@ -1,7 +1,8 @@
 import './ProvideCredentials.css'
 
 
-import Form from '../Forms/Signup'
+import SignUpForm from '../Forms/Signup';
+import LoginForm from '../Forms/Login'; 
 // use this component to display both login and singup forms 
 
 
@@ -12,11 +13,11 @@ function ProvideCredentials (){
     <>
     <h1>Login COmponent</h1>
     <div className='container__left'>
-      <Form />
+      <SignUpForm />
     </div>
     <div className='center'></div>
     <div className='container__right'>
-
+      <LoginForm />
     </div>
     </>
 
