@@ -1,0 +1,94 @@
+
+
+
+
+/* Right container  */
+
+.container__right{
+  position: absolute;
+  top:10%;
+  right:0;
+  width: 49%;
+  height:80vh;
+  display:flex;
+  justify-content: center;
+}
+
+
+.button__container{
+  position: absolute; 
+  bottom: 30%;
+  width:80%;
+  display: flex;
+  justify-content: space-evenly
+}
+
+.btn{
+  font-size:20px;
+  padding:1% 2% 1% 2%;
+  background-color:#C4C4C4;
+  border-radius:10px;
+  border: none;
+  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.25);
+}
+
+.update:hover{
+  background-color: green;
+  color:white
+}
+
+.delete:hover{
+  background-color:red;
+  color:white;
+}
+
+.logout:hover{
+  content:'	f101'
+}
+
+/* Left container  */
+
+.container__left{
+  position: absolute;
+  top:10%;
+  width: 50%;
+  height:80vh;
+  border-right: 3px solid black;
+  display:flex;
+  justify-content: center;
+}
+
+.container__left-text{
+  border: 3px solid #C4C4C4;
+  background-color:#C4C4C4;
+  width: 70%;
+  position:absolute;
+  top:30%;
+  height:fit-content;
+  border-radius:10px;
+  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.25);
+  /* padding-left:2% */
+}
+
+.landing__text{
+  text-align:center;
+  font-size:200%;
+  padding :2%;
+}
+
+.container__left-btn{
+  display:flex;
+  justify-content:space-evenly;
+  margin-bottom:3%
+}
+
+.login,
+.signup {
+  background-color:#DCDADA;
+}
+
+
+.link__landing{
+  text-decoration:none;
+  color: black;
+}

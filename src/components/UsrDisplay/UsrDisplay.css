@@ -1,0 +1,11 @@
+.usrInfo__container{
+  border: 3px solid #C4C4C4;
+  background-color: #C4C4C4;
+  height: 35%;
+  position: absolute;
+  top: 10%;
+  left:4.5%;
+  width: 90%;
+  border-radius:10px;
+  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.25);
+}

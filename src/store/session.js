@@ -67,7 +67,21 @@ export const logout = () => async(dispatch) => {
   }
 }
 
-export const signUp = (fName, lName, email, password, isActive, address, city, state, zip) => async (dispatch) => {
+export const signUp = (payload) => async (dispatch) => {
+
+  const {
+    fName,
+    lName,
+    email,
+    password,
+    isActive,
+    address,
+    city, 
+    state, 
+    zip,
+  } = payload
+
+
   const res = await fetch('', {
     method: 'POST',
     headers:{
