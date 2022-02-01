@@ -31,7 +31,8 @@ function Login(){
   return (
     <>
     <div className='container__form-login'>
-      <form onSubmit={handleSubmit}>
+      <h1 className='login__form-label'>Welcome Back!</h1>
+      <form className='login__form ' onSubmit={handleSubmit}>
         <div>
           <label> Email </label>
           <input
