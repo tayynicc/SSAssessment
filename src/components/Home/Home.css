@@ -1,0 +1,47 @@
+.container__usrInfo-row1{
+  display: flex;
+  justify-content:center;
+}
+
+.container__usrInfo-row2{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+
+.container__usrInfo-row3{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+
+.contianer__userInfo-row4{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center;
+  width:fit-content;
+  height:fit-content;
+  font-weight:bold;
+
+}
+
+.light{
+  height:10px;
+  width:10px;
+  border-radius:50%;
+
+}
+
+.light-active{
+  background-color: green;
+}
+
+.light-notActive{
+  background-color: red;
+}
+
+.update{
+  color:black;
+  text-decoration: none;
+}

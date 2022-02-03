@@ -13,7 +13,7 @@ const removeUser = () => ({
 const initialState = { user: null };
 
 export const authenticate = () => async (dispatch) => {
-  const res = await fetch('', {
+  const res = await fetch('/', {
     headers: {
       'Content-Type': 'applicaiton/json'
     }

@@ -46,6 +46,11 @@
   content:'	f101'
 }
 
+.update{
+  text-decoration: none;
+  color:black;
+}
+
 /* Left container  */
 
 .container__left{

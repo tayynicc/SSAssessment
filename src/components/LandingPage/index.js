@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
+
+
 import  './LandingPage.css';
-
-
-// import GatherUsrData from './Forms/GatherUsrData'
 import UsrDisplay from '../UsrDisplay';
 
 
 function LandingPage (){
 
 
+ 
   return (
     <>
       <div className='container__left'>
@@ -25,12 +25,12 @@ function LandingPage (){
       <div className='container__right'>
         <UsrDisplay />
         
-        <div className='button__container'>
+        {/* <div className='button__container'>
           <button className='btn update'>Update</button>
           <button className='btn logout'>Logout</button>
           <button className='btn delete'>Delete</button>
 
-        </div>
+        </div> */}
       </div>
     </>
 
