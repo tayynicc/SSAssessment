@@ -40,16 +40,18 @@ userRoutes.route("/:id").get(function (req, res) {
 userRoutes.route("/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let data = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
+    first_name: req.body.firstName,
+    last_name: req.body.lastName,
     email: req.body.email,
     password:req.body.password,
-    is_active: req.body.is_active,
+    is_active: req.body.status,
     address: req.body.address,
     city: req.body.city,
     state: req.body.state,
     zip: req.body.zip,
   };
+
+  console.log(`backend!!!!!!!!`,req.body)
   db_connect.collection("users").insertOne(data, function (err, res) {
     if (err) throw err;
     return response.json(res);
@@ -62,13 +64,14 @@ userRoutes.route("/add").post(function (req, response) {
 userRoutes.route("/update/:id").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
+  
   let newvalues = {
     $set: {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
       email: req.body.email,
       password:req.body.password,
-      is_active: req.body.is_active,
+      is_active: req.body.status,
       address: req.body.address,
       city: req.body.city,
       state: req.body.state,

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import  './LandingPage.css';
 import UsrDisplay from '../UsrDisplay';
+import Create from '../Forms/Create'
 
 
 function LandingPage (){
@@ -13,10 +14,9 @@ function LandingPage (){
     <>
       <div className='container__left'>
           <div className='container__left-text'>
-            <p className='landing__text'>Login or Signup to display credentials.</p>
-            <div className='container__left-btn'>
-              <button className='btn login'><Link className='link__landing' to='/login'>Login</Link></button>
-              <button className='btn signup'><Link className='link__landing' to='/signup'>Signup</Link></button>
+            <p className='landing__text'>Create user to display credentials.</p>
+            <div className='create__usr-form'>
+              <Create />
             </div>
           </div>
 

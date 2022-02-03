@@ -6,9 +6,9 @@ import { getUsers } from '../../store/user'
 
 function UsrDisplay(){
   const dispatch = useDispatch()
-  const user = useSelector((state) => Object.values(state.user))
+  const user = useSelector((state) => Object.values(state?.user))
 
-
+console.log(333, user)
   useEffect(() => {
     dispatch(getUsers())
  }, [dispatch])
@@ -17,8 +17,6 @@ function UsrDisplay(){
     <>
     <div className='container__usrInfo'>
 
-      {/* {user.map((usr) => ( */}
-        {/* <> */}
           <table>
             <tr>
               <th>Name</th>

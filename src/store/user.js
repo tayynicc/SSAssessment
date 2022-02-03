@@ -35,7 +35,6 @@ const oneUser = (user) => ({
 export const getUsers = () => async(dispatch) => {
   const res = await fetch(`/all`);
   let users = await res.json();
-  console.log(users)
 
   dispatch(loadUsers(users))
   return users;
@@ -68,6 +67,9 @@ export const createOneUser = (payload) => async dispatch => {
     zip,
    } = payload
 
+   console.log('triggered')
+   console.log(`store payload`, payload)
+
    const res = await fetch(`/add`, {
      method: "POST",
      headers: {"Content-Type": 'applicaiton/json'},
@@ -84,11 +86,13 @@ export const createOneUser = (payload) => async dispatch => {
 }
 // update user 
 export const updateUser = (data) => async dispatch => {
+  console.log(`store`, data)
   const res = await fetch(`/update/${data.id}`, {
-    method:"PUT",
+    method:"POST",
     headers: {'Content-Type': "application/json"},
     body: JSON.stringify(data)
   });
+
 
   let user;
   if(res.ok){
@@ -127,11 +131,11 @@ export default function userReducer(state={}, action){
         return oneUser;
 
       case ADD_USER:
-        if(!state[action.users._id]) {
+        if(!state[action.user.insertedId]) {
           return {
             ...state,
-            [action.users._id] : {
-              ...state[action.users._id]
+            [action.user.insertedId] : {
+              ...state[action.user.insertedId]
             }
           }
         }
@@ -143,6 +147,7 @@ export default function userReducer(state={}, action){
           }
 
       case EDIT_USER:
+        console.log(`!!!!`,action.user)
         return {
           ...state,
           [action.user._id]: action.user

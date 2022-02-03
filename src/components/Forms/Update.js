@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router';
 import { Redirect } from 'react-router-dom';
 
-
+import { updateUser } from '../../store/user'
 
 import './Forms.css'
 
 
 function Update(){
+  const id = useParams().id
   const dispatch = useDispatch()
 
   const [ errors, setErrors ] = useState({});
@@ -36,13 +38,13 @@ function Update(){
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
+
     const payload = {
+      'id': id,
       firstName,
       lastName,
       email, 
       password,
-      repeatPassword,
       status, 
       address,
       city, 
@@ -50,21 +52,15 @@ function Update(){
       zip
     }
 
-    if(password == repeatPassword) {
-      
-      
-      // if (data) {
-      //   setErrors(data)
-      // }
-    } 
 
     console.log(111, payload)
 
+    await dispatch(updateUser(payload))
+
   }
+
   
-  // if (user) {
-  //   return <Redirect to='/' />
-  // }
+ 
   return (
     <>
     <div className='container__outter-form'>

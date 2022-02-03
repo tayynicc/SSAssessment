@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import ProtectedRoute from './components/Auth/ProtectedRoute'
 import LandingPage from './components/LandingPage'
-import Login from './components/ProvideCredentials'
 import Home from './components/Home';
 import UpdateUsr from './components/UpdateUsr';
 
@@ -19,10 +17,6 @@ function App() {
           <LandingPage />
         </Route> 
 
-        <Route path='/login'>
-          <Login/>
-        </Route>
-
         <Route path='/home/:id'>
           <Home />
         </Route>
@@ -31,9 +25,6 @@ function App() {
           <UpdateUsr/>
         </Route>
 
-        <ProtectedRoute>
-          
-        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

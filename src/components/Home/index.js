@@ -12,6 +12,7 @@ function Home(){
   
   const user = useSelector((state) => state?.user)
 
+  console.log(222, user)
 
   const verifyZip = (code) => {
     if(code === null || code === undefined){

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session'
+import { createOneUser } from '../../store/user'
 
 import './Forms.css' 
 
 
-function GatherUsrData(){
+function Create(){
 
   const dispatch = useDispatch()
 
@@ -113,7 +113,6 @@ function GatherUsrData(){
       lastName,
       email, 
       password,
-      repeatPassword,
       status, 
       address,
       city, 
@@ -121,13 +120,13 @@ function GatherUsrData(){
       zip
     }
 
-    if(password == repeatPassword) {
-      const data = await dispatch(signUp(payload))
+    
+      const data = await dispatch(createOneUser(payload))
       
       if (data) {
         setErrors(data)
       }
-    } 
+    
 
     console.log(111, payload)
 
@@ -191,23 +190,12 @@ function GatherUsrData(){
           />
         </div>
 
-        <div>
-          <label> Retype Password </label>
-          <input
-            name='password'
-            type='password'
-            placeholder='password'
-            value={repeatPassword}
-            onChange={updateRepeatPassword}
-          />
-        </div>
-
 
         <div>
           <label> Status </label>
           <input
             name='status'
-            type=''
+            type='text'
             placeholder='active'
             value={status}
             onChange={updateStatus}
@@ -221,7 +209,7 @@ function GatherUsrData(){
           <label> Address </label>
           <input
             name='Address'
-            type=''
+            type='text'
             placeholder='Address'
             value={address}
             onChange={updateAddress}
@@ -272,4 +260,4 @@ function GatherUsrData(){
   )
 }
 
-export default GatherUsrData;
+export default Create;
